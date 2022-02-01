@@ -1,16 +1,3 @@
-import React from "react"
-import { NavBar } from "./nav/NavBar";
-import { ApplicationViews } from "./ApplicationViews";
-
-export const TennisMatchLove = () => {
-    return (
-        <>
-            <NavBar />
-            <h1>Welcome to Tennis Match Love! </h1>
-            <ApplicationViews />
-        </>
-    )
-}
 
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
@@ -18,21 +5,25 @@ import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
+
 import "./TennisMatchLove.css";
 
 export const TennisMatchLove = () => (
   <>
     <Route
       render={() => {
-        if (localStorage.getItem("tennis_player")) {
+        if (localStorage.getItem("user_id")) {
           return (
             <>
+                <h1 className="main_home">Welcome, Tennis Match Love! </h1>
+                
               <NavBar />
               <ApplicationViews />
+              <footer> Tennis Match Love 2022</footer>
             </>
-          );
+          )
         } else {
-          return <Redirect to="/login" />;
+          return <Redirect to="/login" />
         }
       }}
     />
@@ -44,4 +35,4 @@ export const TennisMatchLove = () => (
       <Register />
     </Route>
   </>
-);
+)

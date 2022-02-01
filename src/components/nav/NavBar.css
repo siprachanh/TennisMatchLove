@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&text=Hello');
+
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -7,4 +10,17 @@
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+}
+.nav_link {
+        color: gray;
+        font-size: .9cm;
+}
+
+.nav_button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: honeydew;
+    color: rgb(7, 68, 68);
+    border-style: solid;
+    border-color:teal;
+    font-size: .9cm;
 }
