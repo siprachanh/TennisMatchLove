@@ -1,6 +1,6 @@
 
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, {useState} from "react";
+import { Route, Redirect, useHistory } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
@@ -8,31 +8,33 @@ import { Register } from "./auth/Register";
 
 import "./TennisMatchLove.css";
 
-export const TennisMatchLove = () => (
-  <>
-    <Route
-      render={() => {
-        if (localStorage.getItem("user_id")) {
-          return (
-            <>
-                <h1 className="main_home">Welcome, Tennis Match Love! </h1>
-                
-              <NavBar />
-              <ApplicationViews />
-              <footer> Tennis Match Love 2022</footer>
-            </>
-          )
-        } else {
-          return <Redirect to="/login" />
-        }
-      }}
-    />
+export const TennisMatchLove = () => {
+  const [ isAuthenticated, setIsAuthenticated ] = useState(sessionStorage.getItem("player") !==null);
+  const history = useHistory();
+  const setAuthenticatedPlayer = (player, id, captain) => {
+    sessionStorage.setItem("player", player);
+    sessionStorage.setItem("playerId", id);
+    sessionStorage.setItem("isCaptain", captain)
+    setIsAuthenticated(sessionStorage.getItem("player") !==null);
+  }
 
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
+  const handleLogout = evt => {
+    evt.preventDefault();
+    sessionStorage.clear();
+    setIsAuthenticated(false);
+    history.push("/");
+
+  }
+const handleEdit = id => {
+  history.push(`/invites/${id}/edit`);
+}
+
+return (
+  <>
+    <h1 className="main_home">Welcome, Tennis Match Love! </h1>
+
+    <NavBar />
+    <ApplicationViews />          
   </>
-)
+        
+)}

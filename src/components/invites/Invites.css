@@ -1,0 +1,11 @@
+.invite_header {
+    font-size: .9cm;
+    text-align: left;
+    margin-right: 50%;
+    margin-left: 2%;
+    border: cadetblue;
+    border-top-color:cadetblue;
+    border-bottom-color: cadetblue;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}

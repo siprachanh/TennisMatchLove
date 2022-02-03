@@ -83,7 +83,7 @@ export const Register = () => {
 
                 <fieldset>
                     <button type="submit">
-                        Sign in
+                        Register
                     </button>
                 </fieldset>
             </form>
