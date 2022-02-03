@@ -1,34 +1,26 @@
-import React from "react"
-import { Route } from "react-router-dom"
-import { TennisMatchLove } from "./TennisMatchLove"
-import { Register } from "./auth/Register"
-import { InviteForm } from "./invites/InviteForm"
-import { InviteCard } from "./invites/InviteCard"
-//import { MessageList } from "./components/messsages/MessageList"
-//import { InviteList } from ".components/invites/InviteList"
+import React from "react";
+import { Route } from "react-router-dom";
+import { Login } from "./auth/Login";
+import { TennisMatchLove } from "./TennisMatchLove";
+import { Register } from "./auth/Register";
+import { InviteForm } from "./invites/InviteForm";
+//import { InviteCard } from "./invites/InviteCard";
+import { InviteList } from ".components/invites/InviteList"
 //import { LocationList } from ".components/locations/LocationList"
 
 export const ApplicationViews = () => {
-    return (
-        <>
-            <Route exact path="/">
-                <TennisMatchLove/>
-            </Route>
-            {/* <Route exact path="/players">
-                <PlayerList />
-            </Route> */}
-            {/* <Route exact path="/invites/create">
-                <InviteForm />
-        </Route> */ }
-            <Route exact path="/invites">
-                <InviteCard />
-            </Route>
-            {/* <Route path="/messages">
-                <MessageList />
-            </Route> */ } 
-            {/* <Route path="/locations">
-                <LocationList />
-            </Route> */}
-        </>
-    )
-}
+  return (
+    <>
+      <Route exact path="/">
+        <h1> Home </h1>
+      </Route>
+
+      <Route path="/invites/create">
+        <InviteForm />
+      </Route>
+      <Route path="/invites">
+        <InviteList />
+      </Route>
+    </>
+  );
+};
