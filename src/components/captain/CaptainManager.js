@@ -8,3 +8,7 @@ export const getAllPlayers = () => {
     return fetch(`${remoteURL}/players?`)
     .then(res => res.json())
 }
+export const getAllCaptains = () => {
+    return fetch(`${remoteURL}/players?`)
+    .then(res => res.json())
+}

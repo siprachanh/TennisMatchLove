@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 //import { TennisMatchLove } from "../TennisMatchLove";
-//import { InviteCard } from "./InviteCard";
-import { deleteInvite, getAllInvites } from "./ApiManager.js";
+import { Invite } from "./Invite";
+import { InviteCard } from "./InviteCard";
+import { deleteInvite, getAllInvites } from "../..ApiManager";
 //import { players } from ".players/Player"
 import "./Invites.css"
 

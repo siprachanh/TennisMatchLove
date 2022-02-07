@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css"
 import { useHistory } from "react-router";
 
-export const NavBar = ( ) => {
+export const NavBar = () => {
    
         return (
             <ul className="navbar">
@@ -24,4 +24,4 @@ export const NavBar = ( ) => {
             </li>
             </ul>     
         );
-  };
+  }

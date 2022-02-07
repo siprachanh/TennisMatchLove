@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { getAllCaptains } from "../ApiManager.js";
+import { getAllCaptains } from "./CaptainManager.js";
 
 export const CaptainList = () => {
     const [players, changeCaptain] = useState([]);

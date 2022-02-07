@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getPlayerById } from "../ApiManager.js";
+import { getPlayerById } from "./CaptainManager.js";
 
 export const Captain = () => {
     const [player, set] = useState({});
     const { playerId } = useParams();
+    
 
     useEffect(() => {
         getPlayerById(playerId).then((data) => set(data));

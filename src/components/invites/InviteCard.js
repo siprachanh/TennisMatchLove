@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Invites.css"
-//import { editInvite, deleteInvite } from "./ApiManager.js";
-//import { postInvite } from "../../APIManager";
+import { editInvite, deleteInvite } from "../..ApiManager";
+import { postInvite } from "../../APIManager";
 
 
 export const InviteCard = () => {

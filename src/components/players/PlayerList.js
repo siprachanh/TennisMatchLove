@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { getAllPlayers }  from "./ApiManager.js"
+import { getAllPlayers }  from "./PlayerManager.js"
 
 export const PlayerList = () => {
     const [players, setPlayers] = useState([])
