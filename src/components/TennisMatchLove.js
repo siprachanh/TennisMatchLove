@@ -5,36 +5,42 @@ import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-
 import "./TennisMatchLove.css";
 
 export const TennisMatchLove = () => {
-  const [ isAuthenticated, setIsAuthenticated ] = useState(sessionStorage.getItem("player") !==null);
-  const history = useHistory();
-  const setAuthenticatedPlayer = (player, id, captain) => {
-    sessionStorage.setItem("player", player);
-    sessionStorage.setItem("playerId", id);
-    sessionStorage.setItem("isCaptain", captain)
-    setIsAuthenticated(sessionStorage.getItem("player") !==null);
-  }
-
-  const handleLogout = evt => {
-    evt.preventDefault();
-    sessionStorage.clear();
-    setIsAuthenticated(false);
-    history.push("/");
-
-  }
-const handleEdit = id => {
-  history.push(`/invites/${id}/edit`);
-}
 
 return (
   <>
-    <h1 className="main_home">Welcome, Tennis Match Love! </h1>
+  <Route
+    render={() => {
+      if (localeStorage.getItem("tennis_player")) {
+        return (
+          <> 
+          
+          <h1 className="main_tennis"> Welcome to Tennis Match Love! </h1>
+          <p> Let's Have Fun Playing Tennis</p>
+          <NavBar />
+          <ApplicationViews />   
+      </>
+      );
+      } else{
+        return <Redirect to ="/login" />;
+      }
+    }}
+    />
 
-    <NavBar />
-    <ApplicationViews />          
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route path="/register">
+      <Register />
+    </Route>
   </>
+)
+}
+   
+
+    
+          
+  
         
-)}

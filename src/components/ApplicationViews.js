@@ -1,26 +1,29 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { Login } from "./auth/Login";
+import { PlayerList } from "./players/PlayerList.js";
+import { CaptainList } from "./captain/CaptainList.js"
 import { TennisMatchLove } from "./TennisMatchLove";
-import { Register } from "./auth/Register";
-import { InviteForm } from "./invites/InviteForm";
-//import { InviteCard } from "./invites/InviteCard";
-import { InviteList } from ".components/invites/InviteList"
-//import { LocationList } from ".components/locations/LocationList"
+//import { InviteForm } from "./invites/InviteForm";
+import { InviteList } from "./invites/InviteList"
+import { InviteCard } from "./invites/InviteCard";
+
 
 export const ApplicationViews = () => {
   return (
     <>
-      <Route exact path="/">
-        <h1> Home </h1>
+      <Route exact path="/players">
+        < PlayerList />
       </Route>
-
-      <Route path="/invites/create">
-        <InviteForm />
+      <Route exact path="/captain">
+        < CaptainList/>
       </Route>
-      <Route path="/invites">
+      {/* <Route path="/invites">
         <InviteList />
       </Route>
+      <Route path="/invites/create">
+        <InviteCard />
+      </Route>
+       */}
     </>
   );
 };
